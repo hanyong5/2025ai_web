@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a:link,a:visited{color:black;text-decoration: none;}
+        li{list-style:none;}
+
+        /* content  */
+        .hd{
+            width: 100%;
+            min-width: 1200px;
+            background: pink;
+            padding: 10px 0 ;
+        }
+        .wrapper{
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+
+            /* background: pink; */
+            /* margin-left:auto;
+            margin-right: auto; */
+            margin: 0 auto;
+        }
+        .wrapper > h1 > a > img{height: 30px;}
+        /* .wrapper img{} */
+
+
+
+        .menu{
+            display: flex;
+            /* background: skyblue; */
+        }
+        .menu > li{
+            /* background: violet; */
+            padding:10px
+        }
+
+       
+
+
+
+    </style>
+</head>
+<body>
+    <div class="hd">
+        <div class="wrapper"><!-- display:flex;width:1200px -->
+            <h1><a href="#"><img src="img_logo.png" alt=""></a></h1>
+            <ul class="menu"><!-- display:flex -->
+                <li><a href="#">카카오생활</a></li>
+                <li><a href="#">크루이야기</a></li>
+                <li><a href="#">진행중공고</a></li>
+                <li><a href="#">지원안내</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="util">
+                <a href="#">로그인</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

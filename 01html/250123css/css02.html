@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,a:visited{color: black;text-decoration: none;}
+        li{list-style: none;}
+
+        .box{
+            width: 100px;
+            padding: 10px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        .button{
+            width: 100px;
+            border: 1px solid #000;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .button:hover{
+            background-color: skyblue;
+        }
+        .menu{
+            display:flex;
+            gap: 14px;
+            
+        }
+        .menu1{
+            display: flex;
+            justify-content: space-between;
+            background-color: pink;
+            width: 600px;
+        }
+        .menu1 > li{
+            padding: 10px;
+        }
+
+        .wrapper{
+            display: flex;
+            justify-content: space-between;
+            
+            width: 1100px;
+            background-color: skyblue;
+            margin:0 auto
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        testd
+    </div>
+
+
+    <div class="wrapper">
+
+        <h1>로고</h1>
+    
+        <ul class="menu1">
+            <li>
+                <a href="#">제품기술</a>
+            </li>
+            <li>
+                <a href="#">회사소개</a>
+            </li>
+            <li>
+                <a href="#">토자정보</a>
+            </li>
+            <li>
+                <a href="#">뉴스미디어</a>
+            </li>
+            <li>
+                <a href="#">인제채용</a>
+            </li>
+            <li>
+                <a href="#">지속가능경영</a>
+            </li>
+        </ul>
+        
+        <div class="util">
+            test
+        </div>
+    </div>
+
+
+</body>
+</html>

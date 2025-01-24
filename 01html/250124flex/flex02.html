@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a:link,a:visited{
+            color:black;
+            text-decoration: none;
+        }
+        li{list-style: none;}
+
+        .boxWrap{
+            background-color: aqua;
+            display: flex;
+            gap:10px;
+            justify-content: center;
+            padding:10px
+        }
+
+        .boxWrap > div{
+            background-color: orange;
+            /* display: inline-block; */
+        }
+
+        .menu{
+            background-color: skyblue;
+            display:flex;
+            gap:10px;
+            width:500px;
+            height:100px;
+            margin:0 auto;
+            justify-content: space-between;
+        }
+
+        .menu > li{
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:10px
+        }
+        .menu > li > a{
+            background-color: red;
+            
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxWrap">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+    </div>
+
+    <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+
+    </ul>
+
+</body>
+</html>
