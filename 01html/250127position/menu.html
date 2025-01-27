@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;box-sizing:border-box ;}
+        li{list-style: none;}
+        a:link,a:visited{color: black;text-decoration: none;}
+
+
+        body{
+           font-size:12px;
+           font-family: "Noto Sans KR", serif;
+        }
+
+        header.wrapper{
+            background-color: pink;
+        }
+        .wrap{
+            width: 1200px;
+            margin: 0 auto;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="wrapper"> <!-- display:block bgw -->
+        <div class="wrap"> <!-- w1200 m0auto dflex-->
+            <h1 class="logo">
+                <a href="#"><img src="img_logo.png" alt=""></a>
+            </h1>
+            <nav class="menu">
+                <ul> <!-- display:flex -->
+                    <li>
+                        <a href="#">카카오생활</a>
+                    </li>
+                    <li>
+                        <a href="#">크루이야기</a>
+                    </li>
+                    <li>
+                        <a href="#">진행중공고</a>
+                    </li>
+                    <li>
+                        <a href="#">지원안내</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="util"></div>
+        </div>
+    </header>
+</body>
+</html>
