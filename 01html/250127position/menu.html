@@ -21,12 +21,49 @@
         }
 
         header.wrapper{
-            background-color: pink;
+            /* background-color: pink; */
+            height: 72px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .wrap{
             width: 1200px;
             margin: 0 auto;
-            background-color: aqua;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content:space-between
+        }
+
+        .menu > ul{
+            display: flex;
+            font-size: 16px;
+            gap:30px
+        }
+
+        .menu > ul > li{
+            /* background-color: yellow; */
+            
+        }
+
+        .menu > ul > li > a{
+            display: block;
+            padding: 10px;
+            /* background-color: pink; */
+        }
+
+        .logo > a > img{height: 27px;}
+
+        h1.logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: white; */
+        }
+        .util{
+            display: flex;
+            justify-content: start;
+            align-items: center;
         }
 
     </style>
@@ -56,7 +93,9 @@
                     </li>
                 </ul>
             </nav>
-            <div class="util"></div>
+            <div class="util">
+                <a href="#">로그인</a>
+            </div>
         </div>
     </header>
 </body>
