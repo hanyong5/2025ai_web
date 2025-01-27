@@ -77,18 +77,27 @@
         .container{
             width: 1200px;
             margin: 0 auto;
+            
         }
 
-        .container h2{text-align: center;}
+        .container h2{text-align: center;margin-bottom: 10px;}
         .container .h2_desc{text-align: center;}
 
 
         /* common  */
         h2{font-size: 32px;}
-        h3{}
-        h4{}
+        h3{font-size: 26px;letter-spacing: -0.6px;line-height: 1.4;}
+        h4{font-size: 36px;}
         .h2_desc{font-size: 18px;}
+        .h3_more{font-size: 16px;}
 
+        /* padding * < tag < class < id < inline style < !important  */
+        .py20{padding: 20px 0 !important;}
+        .py30{padding: 30px 0 !important;}
+        .py40{padding: 40px 0 !important;}
+
+        .mb40{margin-bottom: 40px !important;}
+        .mb50{margin-bottom: 50px !important;}
     </style>
 </head>
 <body>
@@ -124,13 +133,24 @@
     <div class="visual">
         <img src="banner01.png" alt="">
     </div>
-    <div class="container">
+    <div class="container py40 mb50">
         <h2>Join the krew</h2>
         <p class="h2_desc">
             카카오 크루는 우리의 일상을 더 좋게 만들고 싶은 멋진 동료입니다.<br>
             다양한 생각을 자유롭게 나누며, 언제나 놀라운 결과를 만들어내죠.<br>
             당신도 세상을 바꾸고 싶나요? 카카오로 오세요!!
         </p>
+    </div>
+    <div class="container">
+        <h4>😃 관심있는 공고를 찾아보세요</h4>
+        <ul class="content">
+            <li>
+                <img src="icon_img01.png" alt="">
+                <h3>100%리얼 스토리<br>카카 오크루 이야기</h3>
+                <span class="h3_more">크루이야기 살펴보기</span>
+            </li>
+           
+        </ul>
     </div>
 </body>
 </html>
