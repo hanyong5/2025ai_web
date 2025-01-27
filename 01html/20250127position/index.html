@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* RESET  */
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style:none}
+        a:link{color:black;text-decoration: none;}
+        a:visited{color:black}
+
+
+        body{
+           font-size:12px;
+           font-family: "Noto Sans KR", serif;
+        }
+        .text{
+            /* font-size:32px */
+            font-size:2em /* 24px */
+        }
+        ul.menu{
+            display: flex;
+            background-color: aqua;
+            font-size: 16px;
+        }
+        ul.menu li{
+            padding: 10px;
+            background-color: pink;
+        }
+
+        .wrap{
+            display: flex;
+            width: 1200px;
+
+            justify-content:space-between;
+            background-color: gray;
+            margin: 0 auto;
+        }
+        .wrap > .logo{
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap > .logo > img{
+            height: 27px;
+        }
+        .util{
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <p>
+        test 16px -> 12px
+    </p>
+    <p class="text">
+        text 24px
+    </p>
+
+    <h1>test TEST</h1> -->
+
+    <div class="wrap">
+        <div class="logo">
+            <img src="img_logo.png" alt="">
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="#">카카오생활</a>
+            </li>
+            <li>
+                <a href="#">크루이야기</a>
+            </li>
+            <li>
+                <a href="#">진행중공고</a>
+            </li>
+            <li>
+                <a href="#">지원안내</a>
+            </li>
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+        </ul>
+        <div class="util">
+            로그인
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
