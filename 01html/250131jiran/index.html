@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,a:visited{color: #333;text-decoration: none;}
+        li{list-style: none;}
+
+        body { 
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+            font-size: 10px;
+        }
+
+        /* header  */
+        
+        .hd .smile{
+            width: 54px;
+        }
+        .hd{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 16px;
+        }
+        .logo a{
+            display: flex;
+            gap:5px
+        }
+        /* .menu{background-color: pink;} */
+        .menu > ul{
+            /* height: 100%; */
+            display: flex;font-size:18px;
+        }
+        .menu > ul >li >a {display: block;padding: 10px 30px;}
+        .util{
+            display: flex;
+            align-items: center;
+            gap:10px
+        }
+        .util > .search{font-size: 30px;}
+        .util > .allmenu{width: 30px;height: 30px;}
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <h1 class="logo">
+            <a href="#">
+                <img src="img/logo1.gif" alt="" class="smile">
+                <img src="img/logo2.svg" alt="">
+            </a>
+        </h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">제품소개</a></li>
+                <li><a href="#">제품문의</a></li>
+                <li><a href="#">홍보센터</a></li>
+                <li><a href="#">회사소개</a></li>
+            </ul>
+        </nav>
+        <div class="util">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+            <img src="img/allmenu-btn.png" alt="" class="allmenu">
+        </div>
+        
+    </header>
+</body>
+</html>
