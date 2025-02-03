@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
         *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
 
         /* card  */
         .card{
@@ -18,6 +19,14 @@
         .img1{
             width: 100%;
         }
+        h2{
+            font-size: 36px;
+            letter-spacing: -0.6px;
+            color:#333;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
         h3{
             font-size:26px;
             letter-spacing: -0.6px;
@@ -52,6 +61,52 @@
         .card_body1{
             padding: 25px;
         }
+
+        .card3{
+            width: 408px;
+            display: flex;
+            flex-direction: column;
+            /* background-color: skyblue; */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px #777
+        }
+        .card_body3{
+            padding: 20px;
+        }
+
+        .container{
+            width: 1300px;
+            margin: 0 auto;
+            /* background-color: pink; */
+        }
+        .content{
+            display: flex;
+            justify-content:space-between
+        }
+
+        .icon{
+            width: 60px;height: 60px;
+            background-image: url(icon.png);
+            background-size: 260px 251px;
+
+        }
+        .icon.kakao{
+            background-position: -140px 0;
+        }
+        .icon.insta{
+            background-position: -140px -60px;
+        }
+        .icon.youtube{
+            background-position: -140px -120px;
+        }
+
+        .iconWrap{
+            display: flex;
+            padding: 20px;
+            background-color: #333;
+            gap:10px
+        }
     </style>
 </head>
 <body>
@@ -71,8 +126,61 @@
         </div>
     </div>
 
+    <div class="card3">
+        <div class="img2"></div>
+        <div class="card_body3">
+            <h3>2024 겨울 인턴십 온보딩 (feat. 뉴크루 웰컴키트)</h3>
+            <p>#문화 #브런치</p>
+        </div>
+    </div>
 
 
-    <img src="test.png" alt="">
+
+    <div class="container">
+        <h2>더 많은 크루 소식이 있어요</h2>
+       <ul class="content">
+        <li>
+            <div class="card3">
+                <div class="img2"></div>
+                <div class="card_body3">
+                    <h3>2024 겨울 인턴십 온보딩 (feat. 뉴크루 웰컴키트)</h3>
+                    <p>#문화 #브런치</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card3">
+                <div class="img2"></div>
+                <div class="card_body3">
+                    <h3>2024 겨울 인턴십 온보딩 (feat. 뉴크루 웰컴키트)</h3>
+                    <p>#문화 #브런치</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="card3">
+                <div class="img2"></div>
+                <div class="card_body3">
+                    <h3>2024 겨울 인턴십 온보딩 (feat. 뉴크루 웰컴키트)</h3>
+                    <p>#문화 #브런치</p>
+                </div>
+            </div>
+        </li>
+       </ul>
+    </div>
+
+
+    <div class="iconWrap">
+        <div class="icon kakao"></div>
+    
+        <div class="icon insta"></div>
+        <div class="icon youtube"></div>
+
+    </div>
+
+
+<div style="height: 500px;"></div>
+
+    <!-- <img src="test.png" alt=""> -->
 </body>
 </html>
