@@ -73,5 +73,60 @@
             
         </ul>
     </div>
+    <style>
+        /* .box{
+            width: 200px;
+            height: 200px;
+            background: green;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .rbox{
+            width: 100px;height: 100px;
+            background-color: red;
+        }
+        .rbox2{
+            width: 100px;height: 100px;
+            background-color: blue;
+        }
+        .rbox3{
+            width: 100px;height: 100px;
+            background-color: orange;
+        } */
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+        .box div{
+            width: 100px;height: 100px;
+            position: absolute;
+        }
+        .rbox{
+            background: skyblue;
+            top: 0;left: 0;
+        }
+        .rbox2{
+            background: green;
+            left: 100px;top: 0;
+        }
+        .rbox3{
+            background: blue;
+            bottom: 0;;left: 0;
+        }
+    </style>
+
+    <div class="box">
+        <div class="rbox"></div>
+        <div class="rbox2"></div>
+        <div class="rbox3"></div>
+    </div>
 </body>
 </html>
