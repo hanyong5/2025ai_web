@@ -4,25 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layout.css">
     <!-- link:css  -->
 
     <style>
-        
+        body{
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        }
 
         
+        .card{
+            width: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .3s;
+            box-shadow: 5px 5px 20px #bbb;
+        }
+        .card:hover{
+            /* background: pink; */
+            transform: translate(-5px,-5px);
+            box-shadow: 20px 20px 20px #bbb;
+            /* transition: .3s; */
+        }
+        .card img{
+            width: 100%;
+        }
+        .card .card_body{
+            padding: 20px;
+        }
 
+        
     </style>
 </head>
 <body>
-    <div class="container bgSky">
-        <h3>GALLERY</h3>
-        <h3 class="dec">Lorem ipsum dolor sit amet.</h3>
-    </div>
-    <div class="container bgRed">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, exercitationem!
+    <div class="container">
+        <h3 class="mb30">더 많은 크루 소식이 있어요</h3>
+        <ul class="flex">
+            <li class="card">
+                <a href="#">
+                    <img src="img01.png" alt="">
+                    <div class="card_body">
+                        <h3 class="dec mb20">2024 겨울 인턴십 온보딩 (feat. 웰컴키트)</h3>
+                        <p class="hash">#문화 #브런치</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card">
+                <a href="#">
+                    <img src="img01.png" alt="">
+                    <div class="card_body">
+                        <h3 class="dec mb20">2024 겨울 인턴십 온보딩 (feat. 웰컴키트)</h3>
+                        <p class="hash">#문화 #브런치</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card">
+                <a href="#">
+                    <img src="img01.png" alt="">
+                    <div class="card_body">
+                        <h3 class="dec mb20">2024 겨울 인턴십 온보딩 (feat. 웰컴키트)</h3>
+                        <p class="hash">#문화 #브런치</p>
+                    </div>
+                </a>
+            </li>
+            
+        </ul>
     </div>
 </body>
 </html>
