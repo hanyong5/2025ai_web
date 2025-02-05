@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        li{list-style: none;color:white}
+        body{
+            background-color: pink;
+        }
+
+        .container{
+            width: 1200px;
+            height: 40px;
+            background: blue;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .menu{
+            display: flex;
+            background-color: violet;
+
+        }
+
+        @media (max-width: 991px) {
+            body{
+                background-color: skyblue;
+            }
+            .container{
+                width: 100%;
+            }
+            .menu{
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body{
+                background-color: green;
+            }
+
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </div>
+</body>
+</html>
