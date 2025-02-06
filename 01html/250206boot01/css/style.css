@@ -6,4 +6,11 @@
     background-position: center center;
     background-size: cover;
 }
+
+
+/* color  */
+
+.bg-gray{
+    background-color: #f0f1f4 !important;
+}
  
