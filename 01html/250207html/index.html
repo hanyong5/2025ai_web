@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css  */
+        /* id, class, tag */
+        /* selector{color:red} */
+        /* div#han{background: green;}
+        div#han.test1{background-color: red;}
+        div{background-color: skyblue;}
+        .test1{background-color: indigo !important;}
+        div.test1{background-color: blue;} */
+
+        /* * < tag < class < id < inline style < ! important */
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- id, class, tag -->
+
+    <!-- <div id="han">1</div> -->
+    <!-- <div class="test1" id="han" style="background-color: aliceblue;">2</div>
+    <div>3</div> -->
+
+
+
+    <!-- block,inline, inline-block tag  -->
+
+    <!-- <div>jkfld;as</div><div>jkdfs</div>
+    <h3>hanyong5</h3><ul><li></li></ul><p></p> -->
+
+
+    <!-- <a href="http://www.naver.com">네이버</a>
+    <span>test</span>
+    <img src="" alt=""> -->
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        .container{
+            width: 1200px;
+            /* background-color: skyblue; */
+            /* margin-left: auto;
+            margin-right: auto; */
+
+            margin:0 auto;
+
+            /* margin-top: ;
+            margin-right: ;
+            margin-bottom: ;
+            margin-left: ;
+
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+
+            margin: 10px;
+            padding: 10px;
+
+            margin: 10px 20px;
+            padding: 10px 20px; */
+
+
+        }
+        h3{text-align: center;}
+        p{text-align: center;}
+
+        .carWrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card{
+            width: 290px;
+            background-color: pink;
+            /* display: inline-block; */
+
+            
+        }
+        .card .cardImg{width: 100%;height: 100px;background-color: blue;}
+        .card .card-body{
+            padding: 25px;
+        }
+        .card .card-body p{
+            text-align: left;
+        }
+
+        .hdWrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .menuWrap{
+            background-color: gray;
+        }
+        .menuWrap ul{
+            display: flex;
+            height: 100%;
+        }
+        .menuWrap ul li{
+            background-color: violet;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .bgGray{
+            background-color: #b1b1b1;
+        }
+    </style>
+
+    <div class="bgGray">
+
+        <div class="container hdWrap">
+            <h1>logo</h1>
+            <div class="menuWrap">
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                    <li>menu5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding: 200px 0;">
+        <h3>title</h3>
+        <p style="margin-bottom: 30px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, pariatur.</p>
+        <div class="carWrap">
+            <div class="card">
+                <div class="cardImg"></div>
+                <div class="card-body">
+                    <h4>test</h4>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg"></div>
+                <div class="card-body">
+                    <h4>test</h4>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg"></div>
+                <div class="card-body">
+                    <h4>test</h4>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg"></div>
+                <div class="card-body">
+                    <h4>test</h4>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    
+
+
+    <script>
+        
+    </script>
+</body>
+</html>
