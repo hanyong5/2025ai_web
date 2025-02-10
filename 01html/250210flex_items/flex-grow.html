@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        html,body{
-            height: 100%;
-        }
-        *{margin: 0;padding: 0;}
-        body{
-            display: flex;
-        }
-        .box{
-            background: pink;
-            flex-grow: 1;
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.3s;
-        }
-        .box:hover{
-            flex-grow: 1.5;
-        }
-        .box.blue{
-            background: blue;
-            color:white
-        }
+      html,
+      body {
+        height: 100%;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+      }
+      .box {
+        flex-grow: 1;
 
-        @media ( max-width:991px ) {
-            body{
-                flex-direction: column;
-            }
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        background-image: url(images/bg-top.jpg);
+        background-position: center center;
+        background-size: cover;
+      }
+      .box.bg2 {
+        background-image: url(images/lime-1000.jpg);
+      }
+      .box.bg3 {
+        background-image: url(images/sample01.jpg);
+      }
+      .box.bg4 {
+        background-image: url(images/bg-top.jpg);
+      }
+      .box:hover {
+        flex-grow: 1.5;
+      }
+      .box.blue {
+        color: white;
+      }
 
-        @media ( max-width:576px ) {
-            body{
-                display: block;;
-            }
+      @media (max-width: 991px) {
+        body {
+          flex-direction: column;
         }
+      }
+
+      @media (max-width: 576px) {
+        body {
+          display: block;
+        }
+      }
     </style>
-</head>
-<body>
-    <div class="box">1</div>
-    <div class="box blue">2</div>
-    <div class="box">3</div>
-    <div class="box blue">4</div>
-</body>
+  </head>
+  <body>
+    <div class="box bg1">1</div>
+    <div class="box blue bg2">2</div>
+    <div class="box bg3">3</div>
+    <div class="box blue bg4">4</div>
+  </body>
 </html>
