@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        *{margin: 0;padding: 0;}
+        body{
+            display: flex;
+        }
+        .box{
+            background: pink;
+            flex-grow: 1;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .box:hover{
+            flex-grow: 1.5;
+        }
+        .box.blue{
+            background: blue;
+            color:white
+        }
+
+        @media ( max-width:991px ) {
+            body{
+                flex-direction: column;
+            }
+        }
+
+        @media ( max-width:576px ) {
+            body{
+                display: block;;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box blue">2</div>
+    <div class="box">3</div>
+    <div class="box blue">4</div>
+</body>
+</html>
