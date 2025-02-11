@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .boxWrap {
+        width: 600px;
+        display: flex;
+        background: skyblue;
+      }
+      .boxWrap div {
+        width: 200px;
+      }
+      .box1 {
+        background: pink;
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+      .box2 {
+        flex-grow: 1;
+        flex-shrink: 2;
+        background: red;
+      }
+      .box3 {
+        flex-grow: 1;
+        flex-shrink: 0;
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <div class="box1">1</div>
+      <div class="box2">1</div>
+      <div class="box3">1</div>
+    </div>
+  </body>
+</html>
