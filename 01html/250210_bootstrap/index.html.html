@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>sample</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        @media (min-width:760px){
+            .dropdown:hover .dropdown-menu{display: block;}
+        }
+
+        .visual{
+            background:url(images/bg-top.jpg) no-repeat center;
+            background-size: cover;
+        }
+        .bg-gray{
+            background: #f0f1f4 !important;
+        }
+        .cont-1st .card{
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border: 0 none;
+            transition:0.3s
+        }
+        .cont-1st .card:hover{
+            transform: translate(-10px,-10px);
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+        }
+        .viewLine:after{
+            content:"";display: block;width: 200px;
+            height: 1px;background: #000;margin: 20px auto;
+        }
+        .cont-2st{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .cont-2st .card{
+            border: 0 none;
+        }
+    </style>
+  </head>
+  <body>
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark  fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="#">LOGO</a>
+            
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">COMPANY</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownId" data-bs-toggle="dropdown">ONLINE</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Action 1</a>
+                            <a class="dropdown-item" href="#">Action 2</a>
+                            <a class="dropdown-item" href="#">Action 3</a>
+                            <a class="dropdown-item" href="#">Action 4</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdownId" data-bs-toggle="dropdown">COMMNUNITY</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">COM 1</a>
+                            <a class="dropdown-item" href="#">COM 2</a>
+                            <a class="dropdown-item" href="#">COM 3</a>
+                            <a class="dropdown-item" href="#">COM 4</a>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+       </div>
+     </nav>
+     <div class="visual py-5">
+        <div class="container text-center text-white">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, consequatur.</p>
+            <a href="#" class="btn btn-light d-block d-md-inline-block mb-3 mx-5">UPLOAD PROJECT</a>
+            <img src="images/drop-icon.png" alt="" class="d-none d-md-block m-auto mb-3">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+        </div>
+     </div>
+     <div class="bg-gray py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 order-2 order-md-1 text-center text-md-start">
+                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, ducimus!</p>
+                    <a href="#!" class="btn btn-primary">more</a>
+                </div>
+                <div class="col-md-7 order-1 order-md-2 mb-5 mb-md-0 px-5 px-md-0">
+                    <img src="images/symu-panel-1.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="container py-5">
+        <div class="row">
+            <div class="col-md-7 mb-5 mb-md-0 px-5 px-md-0">
+                <img src="images/symu-panel-2.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-5  text-center text-md-start">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, ducimus!</p>
+                <a href="#!" class="btn btn-primary">more</a>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray cont-1st py-5">
+        <div class="container">
+            <h2 class="text-center mb-3 viewLine">galley</h2>
+            <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, aliquam.</p>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cont-2st" style="background-image: url(../images/pc01.jpg);">
+        <div class="container py-5">
+            <h2 class="text-center mb-3 viewLine text-white">tour</h2>
+            <p class="text-center mb-5 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, aliquam.</p>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card ">
+                        <img class="card-img-top" src="images/testimg.jpg" alt="Title">
+                        <div class="card-body">
+                            <h4 class="card-title">Lorem, ipsum.</h4>
+                            <p class="card-text">Lorem, ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer py-5 bg-dark text-white">
+        <div class="container text-center">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla minus exercitationem ipsa illum non voluptatum sit dolorum minima dolorem beatae.
+        </div>
+    </div>
+     
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

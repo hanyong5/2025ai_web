@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
       .boxWrap {
-        width: 100%;
         display: flex;
         background: skyblue;
       }
-      .boxWrap div {
-        width: 200px;
+      /* .boxWrap div {
+        width: 300px;
       }
-      .box1 {
-        background: pink;
+      .menu {
+        flex-shrink: 0;
+        background: skyblue;
+      }
+      .box {
         flex-grow: 1;
-        flex-shrink: 1;
+        background: pink;
+      } */
+
+      .boxWrap div {
+        flex: 1 1 auto;
+        background: pink;
       }
       .box2 {
-        flex-grow: 1;
-        flex-shrink: 2;
-        background: red;
-      }
-      .box3 {
-        flex-grow: 1;
-        flex-shrink: 0;
-        background: pink;
+        background: blue;
       }
     </style>
   </head>
   <body>
     <div class="boxWrap">
+      <!-- <div class="box">2</div>
+      <div class="menu">1</div> -->
+
       <div class="box1">1</div>
-      <div class="box2">1</div>
-      <div class="box3">1</div>
+      <div class="box2">2</div>
+      <div class="box3">3</div>
     </div>
   </body>
 </html>
