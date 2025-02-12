@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function myNum() {
+        kor = 50;
+        newKor = 1;
+      }
+      myNum();
+      var kor = 100;
+      var newKor;
+
+      document.write("출력:" + kor);
+      document.write("새로운 :" + newKor + "<br>");
+
+      var x = 5;
+      var y = 7;
+      var result;
+
+      //   result = x > y ? "x" : "y";
+
+      if (x > y) {
+        result = "x";
+      } else {
+        result = "y";
+      }
+
+      document.write(
+        "x와 y값중 누가 더 큰가요..." + result + "더 큽니다." + "<br>"
+      );
+
+      document.write("2 x 1 = " + 2 * 1 + "<br>");
+      document.write("2 x 2 = " + 2 * 2 + "<br>");
+      document.write("2 x 3 = 6" + "<br>");
+      document.write("2 x 4 = 8" + "<br>");
+      document.write("2 x 5 = 10" + "<br>");
+      document.write("2 x 6 = 12" + "<br>");
+
+      document.write("<div class='boxWrap'>");
+      for (var j = 2; j < 10; j++) {
+        document.write("<div>");
+        for (var i = 1; i < 10; i++) {
+          document.write(j + " x " + i + " = " + j * i + "<br>");
+        }
+        document.write("</div>");
+      }
+      document.write("</div>");
+
+      for (var i = 2; i < 10; i++) {
+        document.write(i + "단 <br>");
+        for (var j = 1; j < 10; j++) {
+          document.write(i + " x " + j + " = " + i * j + "<br>");
+        }
+      }
+    </script>
+    <style>
+      .boxWrap {
+        display: flex;
+        background-color: skyblue;
+        gap: 20px;
+      }
+    </style>
+  </body>
+</html>
