@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .toggleWrap {
+        width: 20px;
+        height: 20px;
+        background-color: skyblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .line {
+        width: 15px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        transition: 0.3s;
+      }
+      .line.top {
+        transform: translateY(-5px);
+      }
+      .line.center {
+        background-color: #f00;
+      }
+      .line.bottom {
+        transform: translateY(5px);
+      }
+
+      .toggleWrap.close .line.top {
+        transform: translateY(0px) rotate(45deg);
+      }
+
+      .toggleWrap.close .line.bottom {
+        transform: translateY(0px) rotate(-45deg);
+      }
+
+      .toggleWrap.close .line.center {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- position / flex -->
+
+    <div class="toggleWrap">
+      <div class="line top"></div>
+      <div class="line center"></div>
+      <div class="line bottom"></div>
+    </div>
+  </body>
+</html>
