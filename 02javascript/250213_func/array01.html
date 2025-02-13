@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var com = [10, 20, , 40, 50, 60, 70];
+      var getSum;
+      function printArr() {
+        var sum = 0;
+        var count = 0;
+
+        for (var i = 0; i < com.length; i++) {
+          if (com[i] === undefined) {
+            continue;
+          } else {
+            sum = sum + com[i];
+            count++;
+          }
+        }
+        document.write("시험 응시자는 " + count + "명<br>");
+
+        return parseInt(sum / count);
+      }
+
+      getSum = printArr();
+      document.write("평균은 " + getSum + "점 입니다.");
+    </script>
+  </body>
+</html>

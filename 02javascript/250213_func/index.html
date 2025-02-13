@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      printMsg(10, "홍길동");
+
+      function printMsg(year, name) {
+        document.write(
+          name + "님, 안녕하세요.<br> 당신의 나이는 " + year + "<br>"
+        );
+      }
+
+      printMsg(20, "이순신");
+
+      function gogoDan(dan) {
+        for (var i = 1; i < 10; i++) {
+          document.write(dan + " x " + i + " = " + dan * i + "<br>");
+        }
+        document.write("<button>와</button>");
+      }
+
+      gogoDan(6);
+
+      var gogoDan1 = function (dan) {
+        for (var i = 1; i < 10; i++) {
+          document.write(dan + " x " + i + " = " + dan * i + "<br>");
+        }
+      };
+      gogoDan1(8);
+      var city = ["서울", "부산", "대구", "청주", "수원"];
+      city.pop();
+      city.push("충북");
+
+      function printArr() {
+        for (var i = 0; i < city.length; i++) {
+          document.write(city[i]);
+        }
+      }
+      printArr();
+    </script>
+
+    <button onclick="gogoDan(7)">클릭</button>
+  </body>
+</html>
