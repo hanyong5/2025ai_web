@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <ul class="list">
+        지역
+      </ul>
+      <!-- <div class="list">다른리스트</div>
+      <div class="list">다른리스트1</div> -->
+
+      <input type="text" /><button>추가하기</button>
+    </div>
+    <script>
+      //   document.querySelectorAll(".list")[0].innerHTML = "안녕하세요";
+      //   document.querySelectorAll(".list")[1].innerHTML = "안녕하세요";
+      //   document.querySelectorAll(".list")[2].innerHTML = "안녕하세요";
+
+      //document.getElementsByClassName("list")[0].innerHTML = "Hello";
+
+      //   document.querySelector(".list").innerHTML = "안녕하세요";
+
+      var city = ["서울", "부산", "파주"];
+
+      function cityList() {
+        var list = "";
+        for (var i = 0; i < city.length; i++) {
+          console.log(city[i]);
+          list += "<li>" + (i + 1) + ". " + city[i] + " x </li>";
+        }
+
+        console.log(list);
+        document.querySelector(".list").innerHTML = list;
+      }
+
+      cityList();
+    </script>
+  </body>
+</html>
