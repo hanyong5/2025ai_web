@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <span class="num">num</span>
+      <ul class="city">
+        여기에 넣기
+      </ul>
+      <div class="city">test</div>
+      <button onclick="action()">click</button>
+    </div>
+
+    <script>
+      var city = ["서울", "부산", "대구", "인천"];
+
+      console.log(city[1]);
+
+      var str = "";
+      var sum = 0;
+
+      for (var i = 0; i < city.length; i++) {
+        // document.write(city[i] + "<br>");
+        sum += i;
+        str += "<li>" + city[i] + "</li>";
+      }
+
+      //   document.write(sum);
+      //   document.write(str);
+
+      function action() {
+        document.querySelector(".city").innerHTML = str; //html class/id/tag first search
+        document.querySelector(".num").innerHTML = sum;
+      }
+    </script>
+  </body>
+</html>

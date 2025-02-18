@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var kdata = ["서울", "부산", "구포", "대구", "대전"];
+      //   var str1 = kdata.splice(1, 2);
+
+      //   document.write(str1 + "<br>");
+      //   document.write(kdata + "<br>");
+      //   서울,대구,대전
+
+      //   var str2 = kdata.splice(4, 1);
+      //   document.write(str2 + "<br>");
+      //   document.write(kdata + "<br>");
+      // 서울
+
+      //   kdata.pop();
+      //   kdata.push("자바스크립트");
+      //   document.write(kdata + "<br>");
+
+      kdata.forEach(function (item, index) {
+        document.write(index + 1 + ". " + item + "<br>");
+      });
+
+      for (var i = 0; i < kdata.length; i++) {
+        document.write(i + 1 + ". " + kdata[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>
