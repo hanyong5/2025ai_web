@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a:visited,
+a:link {
+  color: black;
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.nav > ul {
+  display: flex;
+}
+.nav > ul > li {
+  flex-grow: 1; /* 1/5나누어가짐 */
+  transition: 0.3s;
+}
+.nav > ul > li:hover {
+  flex-grow: 1.2;
+  background: blue;
+}
+
+.nav > ul > li > a {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.nav > ul > li > a:hover {
+  color: white;
+}
+
+.sub {
+  display: none;
+}
+
+/* color  */
+.bg-primary {
+  background-color: skyblue !important;
+}
+
+.bg-second {
+  background-color: pink !important;
+}
+
+.bg-info {
+  background-color: purple !important;
+}
