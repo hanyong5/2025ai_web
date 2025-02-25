@@ -36,12 +36,22 @@ li {
 .nav > ul > li > a:hover {
   color: white;
 }
-
+.nav > ul > li {
+  /* position: relative; */
+}
 .sub {
   display: none;
 }
 
 .main li:first-child .sub {
+  display: block;
+  position: absolute;
+  background: pink;
+  width: 100%;
+}
+
+.sub li a {
+  background: skyblue;
   display: block;
 }
 

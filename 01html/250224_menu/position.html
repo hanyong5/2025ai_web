@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .boxWrap {
+        width: 300px;
+        height: 300px;
+        background-color: skyblue;
+        position: relative;
+        /* position: absolute;
+        left: 50%;
+        top: 50%; */
+        /* margin-left: -150px;
+        margin-top: -150px; */
+        /* transform: translate(-50%, -50%); */
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .box1 {
+        position: absolute;
+        background-color: pink;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        transition: 0.3s;
+      }
+      .boxWrap:hover .box1 {
+        top: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <div class="box1">test</div>
+      <!-- <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div> -->
+    </div>
+  </body>
+</html>
