@@ -15,11 +15,6 @@ li {
   list-style: none;
 }
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
 .nav > ul {
   display: flex;
 }
@@ -44,6 +39,10 @@ li {
 
 .sub {
   display: none;
+}
+
+.main li:first-child .sub {
+  display: block;
 }
 
 /* color  */
