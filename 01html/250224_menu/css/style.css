@@ -46,13 +46,13 @@ li {
   width: 100%;
 }
 
-/* .nav > ul > li:hover .sub {
-  display: block;
-} */
-
-.nav:hover .sub {
+.nav > ul > li:hover .sub {
   display: block;
 }
+
+/* .nav:hover .sub {
+  display: block;
+} */
 .nav:hover .menuBack {
   display: block;
 }
