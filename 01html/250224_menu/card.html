@@ -16,20 +16,50 @@
       }
       .wrap {
         background-color: pink;
+        padding: 16px 0;
       }
       .container {
         width: 1200px;
         margin: auto;
-        background: skyblue;
+        padding: 0 16px;
+        /* background: skyblue; */
       }
       .container .row {
         display: flex;
         gap: 10px;
+        flex-wrap: wrap;
+        /* align-items: start; */
       }
       .card img {
         width: 100%;
+        transition: 0.3s;
       }
       .card {
+        flex: 1 0 auto;
+        width: calc(25% - 30px);
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .card .card-body {
+        padding: 16px;
+      }
+      .card:hover img {
+        transform: rotate(5deg) scale(1.1);
+      }
+
+      @media (max-width: 990px) {
+        .container {
+          width: 100%;
+        }
+        .card {
+          width: calc(50% - 10px);
+        }
+      }
+      @media (max-width: 767px) {
+        .card {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -61,10 +91,7 @@
             <img src="images/testimg.jpg" alt="" />
             <div class="card-body">
               <h4>title</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Adipisci, veritatis!
-              </p>
+              <p>Lorem ipsum dolor sit amet.</p>
             </div>
           </div>
           <div class="card">
