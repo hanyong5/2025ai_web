@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .boxWrap {
+        width: 300px;
+        height: 100px;
+        background-color: skyblue;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      .boxWrap:hover .box1 {
+        left: 300px;
+      }
+      .boxWrap:hover .box2 {
+        top: calc(100% - 10px);
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: #f00;
+        position: absolute;
+        left: 0px;
+        transition: 0.3s;
+        border-radius: 50%;
+      }
+      .box2 {
+        background-color: rgb(0, 0, 255);
+        width: 100%;
+        height: 10px;
+        position: absolute;
+        top: 100%;
+        transition: 0.3s;
+      }
+      .boxWrap1 {
+        background-color: rgb(0, 255, 0);
+        width: 300px;
+        overflow: hidden;
+      }
+      img {
+        display: block;
+      }
+      .boxWrap1 {
+        position: relative;
+        cursor: pointer;
+      }
+      .boxWrap1 .mask {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 0, 0, 0.3);
+        position: absolute;
+        top: 0;
+        transition: 0.2s;
+      }
+
+      .boxWrap1:hover .mask {
+        top: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxWrap">
+      <div class="box1"></div>
+      <div class="box2"></div>
+    </div>
+
+    <div class="boxWrap1">
+      <img src="images/testimg.jpg" alt="" />
+      <div class="mask"></div>
+    </div>
+  </body>
+</html>

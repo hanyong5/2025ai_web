@@ -40,12 +40,23 @@
         background-color: white;
         border-radius: 10px;
         overflow: hidden;
+        position: relative;
       }
       .card .card-body {
         padding: 16px;
       }
       .card:hover img {
         transform: rotate(5deg) scale(1.1);
+      }
+      .card .over {
+        /* background-color: rgba(0, 100, 0, 0.2); */
+        background-color: #000;
+        opacity: 0.2;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       @media (max-width: 990px) {
@@ -76,6 +87,7 @@
                 Adipisci, veritatis!
               </p>
             </div>
+            <div class="over"></div>
           </div>
           <div class="card">
             <img src="images/testimg.jpg" alt="" />
