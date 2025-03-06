@@ -9,3 +9,13 @@
 .bg-gray {
   background-color: #cdcdcd;
 }
+.bg-whitegray {
+  background-color: #eaeaea;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
