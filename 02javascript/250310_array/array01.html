@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">이름출력</button>
+    <button class="btn1">되돌리기</button>
+    <ul class="name">
+      이름출력
+    </ul>
+
+    <!-- <ul class="name">
+      2
+    </ul>
+    <ul class="name">
+      3
+    </ul> -->
+
+    <script>
+      var numb = 1
+      var name = "홍길동"
+      //   es5
+      let myname = "한성용"
+      const yourname = "김유신"
+
+      document.write(myname + ", 당신의 이름은 " + yourname + "<br>")
+
+      myname = "이순신"
+      //   yourname = "강감찬"
+      document.write(myname + ", 당신의 이름은 " + yourname + "<br>")
+
+      const arr = ["이순신", "강감찬", "홍길동", "김유신"]
+
+      let arrText = ""
+      for (let i = 0; i < arr.length; i++) {
+        arrText += "<li>" + arr[i] + "</li>"
+      }
+      console.log(arrText)
+
+      //   document.getElementsByClassName("name")[0].innerHTML = arrText
+      //   document.querySelector(".name").innerHTML = arrText
+
+      //   document.getElementsByClassName("btn")[0].addEventListener("click", function () {
+      //     console.log("클릭클릭됨")
+      //   })
+
+      function han() {
+        console.log("바로클릭")
+      }
+      document.querySelector(".btn").addEventListener("click", han)
+
+      //   document.querySelector(".btn").addEventListener("click",function(){})
+      document.querySelector(".btn").addEventListener("click", function () {
+        console.log("test")
+        document.querySelector(".name").innerHTML = arrText
+      })
+
+      //btn클릭후 [이름출력]으로 원상복구
+    </script>
+  </body>
+</html>

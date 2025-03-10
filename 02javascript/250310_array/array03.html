@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" class="inp" />
+    <button class="btn">insert</button>
+    <ul class="view"></ul>
+
+    <script>
+      const arr = []
+
+      const inpBtn = document.querySelector(".btn")
+      const inpValue = document.querySelector(".inp")
+      const view = document.querySelector(".view")
+
+      // inpBtn.addEventListener("click",function(){})
+      inpBtn.addEventListener("click", function () {
+        // console.log("test")
+        // console.log(inpValue.value)
+        arr.push(inpValue.value)
+        arrData()
+      })
+
+      function arrData() {
+        let textData = ""
+        for (let i = 0; i < arr.length; i++) {
+          textData += "<li>" + arr[i] + "</li>"
+        }
+        view.innerHTML = textData
+      }
+    </script>
+  </body>
+</html>
