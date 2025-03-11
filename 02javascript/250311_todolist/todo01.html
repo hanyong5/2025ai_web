@@ -24,9 +24,7 @@
   <body>
     <input type="text" class="inp" value="" />
     <button class="btn">insert</button>
-    <ul class="view">
-      오늘의 할일을 작성
-    </ul>
+    <ul class="view"></ul>
     <button class="aDel">all del</button>
 
     <script>
@@ -56,6 +54,8 @@
         todoDataView()
       })
 
+      todoDataView()
+
       function addTodo() {
         if (inpElem.value != "") {
           todoData.push(inpElem.value)
@@ -68,9 +68,16 @@
 
       function todoDataView() {
         let dataList = ""
-        for (let i = 0; i < todoData.length; i++) {
-          //   dataList += "<li>" + todoData[i] + "</li>"
-          dataList += `<li  >${todoData[i]} <span class="del" onclick="todoDel(${i})">X</span></li>`
+
+        if (todoData.length > 0) {
+          for (let i = 0; i < todoData.length; i++) {
+            //   dataList += "<li>" + todoData[i] + "</li>"
+            dataList += `<li  >${todoData[i]} <span class="del" onclick="todoDel(${i})">X</span></li>`
+          }
+          aDelElem.style.display = "block"
+        } else {
+          dataList = `<li>오늘은 쉬는 날</li>`
+          aDelElem.style.display = "none"
         }
         viewElem.innerHTML = dataList
       }
