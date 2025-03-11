@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .del {
+        background-color: #ccc;
+        display: flex;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .view li {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="inp" value="" />
+    <button class="btn">insert</button>
+    <ul class="view">
+      오늘의 할일을 작성
+    </ul>
+    <button class="aDel">all del</button>
+
+    <script>
+      const inpElem = document.querySelector(".inp")
+      const btnElem = document.querySelector(".btn")
+      const viewElem = document.querySelector(".view")
+      const aDelElem = document.querySelector(".aDel")
+
+      let todoData = []
+
+      //   btnElem.addEventListener("이벤트명",함수)
+
+      //   btnElem.addEventListener("click", function () {
+      //     addTodo()
+      //   })
+
+      btnElem.addEventListener("click", addTodo)
+
+      inpElem.addEventListener("keydown", function (e) {
+        if (e.key == "Enter") {
+          addTodo()
+        }
+      })
+
+      aDelElem.addEventListener("click", function () {
+        todoData = []
+        todoDataView()
+      })
+
+      function addTodo() {
+        if (inpElem.value != "") {
+          todoData.push(inpElem.value)
+          inpElem.value = ""
+        } else {
+          alert("오늘의 할일을 입력하세요")
+        }
+        todoDataView()
+      }
+
+      function todoDataView() {
+        let dataList = ""
+        for (let i = 0; i < todoData.length; i++) {
+          //   dataList += "<li>" + todoData[i] + "</li>"
+          dataList += `<li  >${todoData[i]} <span class="del" onclick="todoDel(${i})">X</span></li>`
+        }
+        viewElem.innerHTML = dataList
+      }
+
+      function todoDel(index) {
+        console.log(index)
+        todoData.splice(index, 1)
+        todoDataView()
+      }
+    </script>
+  </body>
+</html>
