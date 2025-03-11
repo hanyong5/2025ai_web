@@ -28,6 +28,19 @@
     <button class="aDel">all del</button>
 
     <script>
+      // 1. input, button, view
+      // 2. script -> dom 구하기
+      // 3. 배열데이터 선언
+      // 4. dom 이벤트(click)실행
+      //    -> 배열데이터에 push
+      // 5. 배열데이터 출력 함수만들기
+      //    -> for 문작성 -> view넣기
+
+      // 자신삭제, 전체삭제 기능 추가
+      // 리스트없으면 comment(오늘은 쉬는 날)
+      // 빈공란을 넣으면 에러메세지(오늘의 할일을 입력하세요)
+      // Enter키 입력
+
       const inpElem = document.querySelector(".inp")
       const btnElem = document.querySelector(".btn")
       const viewElem = document.querySelector(".view")
