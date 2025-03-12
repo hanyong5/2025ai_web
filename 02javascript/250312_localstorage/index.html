@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action="index">
+      <input type="text" />
+      <input type="submit" value="전송" />
+    </form> -->
+
+    <input type="text" class="inp" value="" />
+
+    <button onclick="save()">저장</button>
+    <button onclick="clearData()">삭제</button>
+    <!-- <button class="btn">저장</button> -->
+    <p class="mydata"></p>
+    <script>
+      const inpElem = document.querySelector(".inp")
+
+      function save() {
+        // alert("test")
+        let inputValue = inpElem.value
+        if (inputValue != "") {
+          localStorage.setItem("myData", inputValue)
+          document.querySelector(".mydata").innerHTML = inputValue
+        } else {
+          alert("자료를 넣어주세요")
+        }
+      }
+
+      function clearData() {
+        localStorage.removeItem("myData")
+        document.querySelector(".mydata").innerHTML = ""
+      }
+
+      //페이지가 로드될때
+      //document.addEventListener("DOMContentLoaded",function(){})
+
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log(localStorage.getItem("myData"))
+        let store = localStorage.getItem("myData")
+        document.querySelector(".mydata").innerHTML = store
+      })
+
+      //   const btnElem = document.querySelector(".btn")
+      //   btnElem.addEventListener("click", function () {
+      //     save()
+      //   })
+    </script>
+  </body>
+</html>

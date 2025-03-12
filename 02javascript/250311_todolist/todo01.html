@@ -22,8 +22,9 @@
     </style>
   </head>
   <body>
-    <input type="text" class="inp" value="" />
+    <input type="text" class="inp" value="" placeholder="오늘의 할일을 입력하세요" />
     <button class="btn">insert</button>
+    <h3>오늘의 명언</h3>
     <ul class="view"></ul>
     <button class="aDel">all del</button>
 
@@ -41,6 +42,7 @@
       // 빈공란을 넣으면 에러메세지(오늘의 할일을 입력하세요)
       // Enter키 입력
 
+      //var
       const inpElem = document.querySelector(".inp")
       const btnElem = document.querySelector(".btn")
       const viewElem = document.querySelector(".view")
@@ -53,6 +55,8 @@
       //   btnElem.addEventListener("click", function () {
       //     addTodo()
       //   })
+
+      //event
 
       btnElem.addEventListener("click", addTodo)
 
@@ -68,6 +72,8 @@
       })
 
       todoDataView()
+
+      //   function
 
       function addTodo() {
         if (inpElem.value != "") {
