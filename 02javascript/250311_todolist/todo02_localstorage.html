@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .del {
+        background-color: #ccc;
+        display: flex;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .view li {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="inp" value="" placeholder="오늘의 할일을 입력하세요" />
+    <button class="btn">insert</button>
+    <ul class="view" id="test"></ul>
+    <button class="aDel">all del</button>
+
+    <script>
+      //var
+      const inpElem = document.querySelector(".inp")
+      // const inpElem = document.getElementsByClassName("inp")[0]
+      // const inpElem1 = document.getElementsByTagName("ul")[0]
+      // const inpElem2 = document.getElementById("test")
+      const btnElem = document.querySelector(".btn")
+      const viewElem = document.querySelector(".view")
+      const aDelElem = document.querySelector(".aDel")
+
+      let todoData = []
+
+      //   btnElem.addEventListener("이벤트명",함수이름)
+
+      //   btnElem.addEventListener("click", function () {
+      //     addTodo()
+      //   })
+
+      //event
+
+      btnElem.addEventListener("click", addTodo)
+
+      inpElem.addEventListener("keydown", function (e) {
+        if (e.key == "Enter") {
+          addTodo()
+        }
+      })
+
+      aDelElem.addEventListener("click", function () {
+        todoData = []
+        localStorage.clear()
+        todoDataView()
+      })
+
+      todoDataView()
+
+      //   function
+
+      function addTodo() {
+        if (inpElem.value != "") {
+          todoData.push(inpElem.value)
+          localStorage.setItem(inpElem.value, inpElem.value)
+          inpElem.value = ""
+        } else {
+          alert("오늘의 할일을 입력하세요")
+        }
+        todoDataView()
+      }
+
+      function todoDataView() {
+        todoData = []
+
+        for (let i = 0; i < localStorage.length; i++) {
+          todoData.push(localStorage.key(i))
+        }
+
+        let dataList = ""
+
+        if (todoData.length > 0) {
+          for (let i = 0; i < todoData.length; i++) {
+            //   dataList += "<li>" + todoData[i] + "</li>"
+            dataList += `<li>${todoData[i]} <span class="del" onclick="todoDel(${i},'${todoData[i]}')">X</span></li>`
+          }
+          aDelElem.style.display = "block"
+        } else {
+          dataList = `<li>오늘은 쉬는 날</li>`
+          aDelElem.style.display = "none"
+        }
+        viewElem.innerHTML = dataList
+      }
+
+      function todoDel(index, item) {
+        console.log(item)
+        todoData.splice(index, 1)
+        localStorage.removeItem(item)
+        todoDataView()
+      }
+    </script>
+  </body>
+</html>
