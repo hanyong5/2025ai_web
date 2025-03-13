@@ -2,12 +2,3 @@
   { "text": "ddd", "completed": false },
   { "text": "fdsafdasdf", "completed": false }
 ]
-
-
-[{},{}]
-
-
-let arr = [{text:value1,han:33},{text:value2,han:20},{text:value3,han:20}]
-
-arr[0].text
-arr[0].han
