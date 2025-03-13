@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .listView {
+        width: 300px;
+      }
+
+      .listView li {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="inp" placeholder="오늘 일" />
+    <button class="btn">할일</button>
+    <ul class="listView"></ul>
+    <button class="dBtn">모두삭제</button>
+    <script src="js/script03.js"></script>
+  </body>
+</html>
