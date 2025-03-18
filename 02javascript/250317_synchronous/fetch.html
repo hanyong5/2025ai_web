@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="view"></div>
+    <script>
+      // fetch(javascript),ajax(jquery),axios(javascript)
+
+      const API_KEY = "a87c5485c788a8a30b03b139d3818495"
+      const url = "https://dapi.kakao.com/v2/search/web?query=이효리"
+
+      const fetchKaKao = async function () {
+        try {
+          const response = await fetch(url, {
+            method: "GET",
+            headers: {
+              Authorization: "KakaoAK " + API_KEY,
+              "Content-Type": "application/json",
+            },
+          })
+
+          const data = await response.json()
+
+          document.querySelector(".view").innerHTML = JSON.stringify(data.documents)
+          //   console.log("test" + data)
+        } catch (error) {
+          console.error("error :", error)
+        }
+      }
+
+      fetchKaKao()
+    </script>
+  </body>
+</html>

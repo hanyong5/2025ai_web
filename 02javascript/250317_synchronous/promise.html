@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const myPromise = new Promise(function (resolve, reject) {
+      //     setTimeout(function () {
+      //       let success = false
+      //       if (success) {
+      //         resolve("작업성공")
+      //       } else {
+      //         reject("작업실패")
+      //       }
+      //     }, 3000)
+      //   })
+
+      //   myPromise
+      //     .then(function (result) {
+      //       console.log("성공 : " + result)
+      //     })
+      //     .catch(function (error) {
+      //       console.log("실패 : " + error)
+      //     })
+
+      //   function test() {
+      //     console.log("test")
+      //   }
+      //   test()
+
+      //   const test1 = function () {
+      //     console.log("test1")
+      //   }
+      //   test1()
+
+      function fetchData() {
+        return new Promise(function (resolve) {
+          setTimeout(function () {
+            resolve("데이터가져오기 완료")
+          }, 1000)
+        })
+        // return new Promise(()=>{})
+      }
+
+      async function getData() {
+        try {
+          console.log("데이터요청중")
+          console.log(await fetchData())
+        } catch (error) {
+          console.log("에러발생")
+        }
+      }
+      getData()
+    </script>
+  </body>
+</html>
