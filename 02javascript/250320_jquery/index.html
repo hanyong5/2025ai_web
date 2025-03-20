@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+      .btn {
+      }
+      .box.han {
+        background-color: skyblue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">버튼</div>
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis consectetur facere officia?
+      Excepturi esse, vero libero minima minus repellendus et, nemo ducimus, quidem expedita maiores
+      in? Aperiam ducimus aut autem?
+    </div>
+    <script>
+      //   document.querySelector(".btn").addEventListener("click", function () {
+      //     document.querySelector(".box").innerHTML = "test"
+      //     document.querySelector(".box").style.backgroundColor = "skyblue"
+      //   })
+
+      $(".btn").click(function () {
+        // $(".box").html("test")
+        // $(".box").css("background-color", "blue").css("color", "white")
+        // $(".box").css({ "background-color": "pink", color: "white" })
+        $(".box").toggleClass("han")
+      })
+
+      //   $(".btn").on("click",function(){})
+      //   $(".btn").click(function(){})
+    </script>
+  </body>
+</html>
