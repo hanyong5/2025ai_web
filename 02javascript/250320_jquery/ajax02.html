@@ -6,6 +6,13 @@
     <title>Document</title>
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      .view {
+        white-space: nowrap; /* 줄 바꿈 방지 */
+        overflow: hidden; /* 넘치는 부분 숨김 */
+        text-overflow: ellipsis; /* 말줄임표(...) 표시 */
+      }
+    </style>
   </head>
   <body>
     <div class="container py-3">
@@ -66,15 +73,16 @@
 
         function dataSuccess(data) {
           console.log(data)
+          $(".result").empty()
 
           $.each(data.documents, function (i, item) {
             $(".result").append(`
-            <div class="view">
-              <a href="${item.url}" class="nav-link" target="_blank">
-                ${item.title}
-              </a>  
-            </div>
-                              `)
+              <div>
+                <a href="${item.url}" class="nav-link view" target="_blank">
+                  ${item.title}
+                </a>  
+              </div>
+              `)
           })
         }
 
