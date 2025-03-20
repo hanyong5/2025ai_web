@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="result"></div>
+      <div class="result mb-3"></div>
       <div class="d-flex justify-content-center">
         <ul class="pagination">
           <li class="page-item disabled">
@@ -41,8 +41,8 @@
       $(".searchBtn").click(function () {
         // document.querySelector(".inp").value
         query = $(".inp").val().trim()
-
         loadUsers()
+        $(".inp").val("") // input
       })
 
       function loadUsers() {
@@ -53,20 +53,34 @@
           return
         }
 
-        let apiURL = `${URL}?query=${query}`
+        let apiURL = `${URL}?query=${query}&sort=recency`
 
         $.ajax({
           url: apiURL,
           type: "GET",
           headers: { Authorization: "KakaoAK " + API_KEY },
           dataType: "json",
-          success: function (data) {
-            console.log(data.documents)
-          },
-          error: function (xhr, status, error) {
-            console.error("검색실패 : " + error)
-          },
+          success: dataSuccess,
+          error: dataError,
         })
+
+        function dataSuccess(data) {
+          console.log(data)
+
+          $.each(data.documents, function (i, item) {
+            $(".result").append(`
+            <div class="view">
+              <a href="${item.url}" class="nav-link" target="_blank">
+                ${item.title}
+              </a>  
+            </div>
+                              `)
+          })
+        }
+
+        function dataError(xhr, status, error) {
+          console.error("검색실패 : " + error)
+        }
       }
     </script>
   </body>
