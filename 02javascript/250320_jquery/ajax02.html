@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container py-3">
+      <h3>검색</h3>
+      <div class="d-flex gap-1">
+        <input type="text" class="form-control inp" placeholder="검색어 입력하세요" />
+        <div class="btn btn-primary searchBtn" style="width: 80px">검색</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="result"></div>
+      <div class="d-flex justify-content-center">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const URL = "https://dapi.kakao.com/v2/search/web"
+      const API_KEY = "a87c5485c788a8a30b03b139d3818495"
+      let query = ""
+
+      $(".searchBtn").click(function () {
+        // document.querySelector(".inp").value
+        query = $(".inp").val().trim()
+
+        loadUsers()
+      })
+
+      function loadUsers() {
+        // alert(query)
+
+        if (query == "") {
+          alert("검색어를 입력하세요.")
+          return
+        }
+
+        let apiURL = `${URL}?query=${query}`
+
+        $.ajax({
+          url: apiURL,
+          type: "GET",
+          headers: { Authorization: "KakaoAK " + API_KEY },
+          dataType: "json",
+          success: function (data) {
+            console.log(data.documents)
+          },
+          error: function (xhr, status, error) {
+            console.error("검색실패 : " + error)
+          },
+        })
+      }
+    </script>
+  </body>
+</html>

@@ -11,7 +11,7 @@
     <div class="container">
       <div class="d-flex gap-3">
         <h2>회원리스트</h2>
-        <div class="btn btn-primary userBtn">회원리스트</div>
+        <div class="btn btn-primary userBtn" id="user">회원리스트</div>
       </div>
       <table class="table">
         <thead>
@@ -19,19 +19,50 @@
             <th>id</th>
             <th>name</th>
             <th>email</th>
-            <th>date</th>
+            <th>cell phone</th>
           </tr>
         </thead>
         <tbody class="userView">
-          <tr>
+          <!-- <tr>
             <td>1</td>
             <td>han</td>
             <td>han@test</td>
             <td>2022.22.22</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
-    <script></script>
+    <script>
+      const URL = "https://jsonplaceholder.typicode.com/users"
+
+      $(".userBtn").click(function () {
+        loadUsers()
+      })
+
+      function loadUsers() {
+        $.ajax({
+          url: URL,
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            console.log(data)
+
+            let html = ""
+            data.forEach(function (item, index) {
+              html += `<tr>
+                            <td>${item.id}</td>
+                            <td>${item.name}</td>
+                            <td>${item.email}</td>
+                            <td>${item.phone}</td>
+                        </tr>`
+            })
+            $(".userView").html(html)
+          },
+          error: function (xhr, status, error) {
+            console.error("회원실패 : " + error)
+          },
+        })
+      }
+    </script>
   </body>
 </html>
