@@ -18,6 +18,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <style>
       .slider-div {
@@ -30,7 +37,7 @@
 
       .slick-prev {
         position: absolute;
-        left: 10px;
+        left: -20px;
         z-index: 10;
       }
       .slick-next {
@@ -40,17 +47,19 @@
     </style>
   </head>
   <body>
-    <div class="slider-div" style="background-color: pink">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>7</div>
-      <div>8</div>
-      <div>9</div>
-      <div>10</div>
+    <div class="container">
+      <div class="slider-div" style="background-color: pink">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+      </div>
     </div>
 
     <script
@@ -78,7 +87,7 @@
         autoplaySpeed: 10000, // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
         pauseOnHover: true, // 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
         vertical: false, // 세로 방향 슬라이드 옵션
-        prevArrow: "<button type='button' class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
+        prevArrow: "<button type='button' class='slick-prev bg-primary'>Previous</button>", // 이전 화살표 모양 설정
         nextArrow: "<button type='button' class='slick-next'>Next</button>", // 다음 화살표 모양 설정
         dotsClass: "slick-dots", //아래 나오는 페이지네이션(점) css class 지정
         draggable: true, //드래그 가능 여부
