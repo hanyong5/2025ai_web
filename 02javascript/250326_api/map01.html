@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="map" style="width: 500px; height: 400px"></div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05222ace53571c8fbb636c91def0fbc2"
+    ></script>
+    <script>
+      //지도생성
+      var container = document.getElementById("map")
+      var options = {
+        center: new kakao.maps.LatLng(37.56826, 126.977829),
+        level: 3,
+      }
+
+      var map = new kakao.maps.Map(container, options)
+
+      //마커
+      var marker = new kakao.maps.Marker({
+        position: new kakao.maps.LatLng(37.56826, 126.977829),
+      })
+
+      marker.setMap(map)
+
+      //이벤트
+      var infowindow = new kakao.maps.InfoWindow({
+        content: '<div style="padding:5px;width:200px;height:100px">여기는 서울</div>',
+      })
+
+      kakao.maps.event.addListener(marker, "mouseover", function () {
+        infowindow.open(map, marker)
+      })
+
+      kakao.maps.event.addListener(marker, "mouseout", function () {
+        infowindow.close()
+      })
+    </script>
+  </body>
+</html>

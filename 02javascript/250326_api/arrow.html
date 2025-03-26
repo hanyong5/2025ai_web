@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function funcTest1() {
+        //alert("test1")
+      }
+      funcTest1()
+
+      const funcTest2 = function () {
+        //alert("test2")
+      }
+      funcTest2()
+
+      const funcTest3 = (name, year) => {
+        //alert("test3" + name + "," + year + "살")
+      }
+      funcTest3("홍길동", 10)
+
+      //   let hanyong5 = 10
+      //   hanyong5 = 100
+      //   console.log("hanyong5 :" + hanyong5)
+
+      //   var hantest = 100
+      //   var hantest = 1000
+      //   console.log("hantest :" + hantest)
+
+      function add(a, b) {
+        return a + b
+      }
+
+      const sumNum = add(10, 100)
+
+      console.log(add(10, 10))
+      console.log(sumNum)
+
+      //   const multiNum1 = (a, b) => {
+      //     return a * b
+      //   }
+      const multiNum1 = (a, b) => a * b
+
+      console.log(multiNum1(10, 3))
+
+      const person = {
+        name: "hong",
+        sayHi: function () {
+          alert(this.name)
+        },
+        sayHiArrow: () => {
+          alert(this.name)
+        },
+      }
+
+      person.name // hong
+      console.log(person.name)
+
+      //   person.sayHi()
+      //   person.sayHiArrow()
+
+      async function 함수이름() {
+        const 결과 = await 비동기함수()
+        console.log(결과)
+      }
+
+      const getPost = async () => {
+        try {
+          const response = await axios()
+          console.log(response.data)
+        } catch (error) {
+          console.error("에러" + error)
+        }
+      }
+    </script>
+  </body>
+</html>
