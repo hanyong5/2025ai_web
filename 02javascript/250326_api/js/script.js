@@ -19,6 +19,7 @@ function initMap() {
       //   cityData.forEach(function(item,index){})
       cityData.forEach((item, i) => {
         if (!item.title) {
+          console.log(item.name)
           var markerPosition = new kakao.maps.LatLng(item.lat, item.lon)
           var marker = new kakao.maps.Marker({
             position: markerPosition,
@@ -40,6 +41,22 @@ function initMap() {
 
           getWeather(item.lat, item.lon).then((wData) => {
             console.log(wData)
+            //이벤트
+            var infowindow = new kakao.maps.InfoWindow({
+              content: `<img src="http://openweathermap.org/img/wn/${wData.icon}.png">
+                        <div class="mapinfo">도시 : ${item.name}</div>
+                        <div>온도 : ${wData.temp}</div>
+                        <div>상태 : ${wData.desc}</div>
+                        `,
+            })
+
+            kakao.maps.event.addListener(marker, "mouseover", function () {
+              infowindow.open(map, marker)
+            })
+
+            kakao.maps.event.addListener(marker, "mouseout", function () {
+              infowindow.close()
+            })
           })
         }
       })
@@ -50,13 +67,13 @@ function initMap() {
 }
 
 function getWeather(lat, lon) {
-  console.log(lat, lon)
   const API_KEY = "4eedfeb184dc7cb08af6c0bd529c48b9"
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=kr&appid=${API_KEY}`
   let wData = axios
     .get(url)
     .then((response) => {
       const data = response.data
+      console.log(data.name)
       return {
         temp: data.main.temp,
         desc: data.weather[0].description,
