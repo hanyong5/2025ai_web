@@ -42,20 +42,46 @@ function initMap() {
           getWeather(item.lat, item.lon).then((wData) => {
             console.log(wData)
             //이벤트
-            var infowindow = new kakao.maps.InfoWindow({
-              content: `<img src="http://openweathermap.org/img/wn/${wData.icon}.png">
-                        <div class="mapinfo">도시 : ${item.name}</div>
-                        <div>온도 : ${wData.temp}</div>
-                        <div>상태 : ${wData.desc}</div>
-                        `,
+            // var infowindow = new kakao.maps.InfoWindow({
+            //   content: `<img src="http://openweathermap.org/img/wn/${wData.icon}.png">
+            //             <div class="mapinfo">도시 : ${item.name}</div>
+            //             <div>온도 : ${wData.temp}</div>
+            //             <div>상태 : ${wData.desc}</div>
+            //             `,
+            // })
+
+            const content = `
+            <div class="customoverlay">
+              <div class="wrap">
+                <div class="info">
+                  <div class="title">${item.name}</div>
+                  <div class="body">
+                    <img src="images/${wData.icon}.png" style="width:50px;height:50px;">
+                    <div class="desc">
+                      <div>🌡️ 온도: ${wData.temp}°C</div>
+                      <div>☁️ 상태: ${wData.desc}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+
+            const overlay = new kakao.maps.CustomOverlay({
+              content: content,
+              position: marker.getPosition(),
+              yAnchor: 1.2,
+              zIndex: 3,
             })
 
-            kakao.maps.event.addListener(marker, "mouseover", function () {
-              infowindow.open(map, marker)
+            kakao.maps.event.addListener(marker, "click", function () {
+              //   infowindow.open(map, marker)
+              overlay.setMap(map)
             })
 
             kakao.maps.event.addListener(marker, "mouseout", function () {
-              infowindow.close()
+              //   infowindow.close()
+              overlay.setMap(null)
             })
           })
         }

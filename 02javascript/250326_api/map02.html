@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .mapinfo {
+      .customoverlay {
+        width: 150px;
+        background-color: white;
+        padding: 16px;
+        border-radius: 16px;
+        white-space: wrap;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+      }
+      .customoverlay .title {
+        font-size: 1.2em;
+      }
+      .customoverlay img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        position: absolute;
+        top: -25px;
+        left: -25px;
       }
     </style>
   </head>
   <body>
-    <div id="map" style="width: 500px; height: 400px"></div>
+    <div id="map" style="width: 800px; height: 600px"></div>
 
     <script
       type="text/javascript"
