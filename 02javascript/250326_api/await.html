@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="user"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js"
+      integrity="sha512-2A1+/TAny5loNGk3RBbk11FwoKXYOMfAK6R7r4CpQH7Luz4pezqEGcfphoNzB7SM4dixUoJsKkBsB6kg+dNE2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function userData() {
+        axios
+          .get("https://jsonplaceholder.typicode.com/users")
+          .then((res) => {
+            console.log(res.data)
+            const data = res.data
+
+            data.forEach((item, index) => {
+              //   console.log(item.name)
+              console.log(data[index].name)
+            })
+
+            for (const user of data) {
+              console.log(user.name)
+            }
+
+            for (let i = 0; i < data.length; i++) {
+              console.log(data[i].name)
+            }
+          })
+          .catch((error) => {
+            console.error("에러" + error)
+          })
+      }
+      //   userData()
+
+      async function getUser() {
+        try {
+          const userRes = await axios.get("https://jsonplaceholder.typicode.com/users")
+          console.log(userRes.data)
+
+          const users = userRes.data
+
+          let html = ""
+          for (const user of users) {
+            html += `<h3>${user.name}</h3>`
+
+            const postRes = await axios.get(
+              `https://jsonplaceholder.typicode.com/posts?userId=${user.id}`
+            )
+            const posts = postRes.data
+            html += `<ul>`
+
+            posts.forEach((post) => {
+              html += `<li>${post.title}</li>`
+            })
+
+            html += `</ul>`
+          }
+
+          document.querySelector(".user").innerHTML = html
+        } catch (error) {
+          console.error("데이터x" + error)
+        }
+      }
+      getUser()
+    </script>
+  </body>
+</html>
