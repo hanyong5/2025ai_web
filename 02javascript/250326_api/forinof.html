@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        background: skyblue;
+      }
+      .card {
+        padding: 16px;
+        background: pink;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="view"></div>
+    <div class="view1"></div>
+    <div class="city"></div>
+
+    <script>
+      // for...of
+
+      const fruits = ["사과", "배", "딸기"]
+
+      // array.forEach(function(){});
+
+      let allFruit = ""
+      fruits.forEach((item) => {
+        allFruit += item
+      })
+
+      document.querySelector(".view").innerHTML = allFruit
+
+      let allFruits = ""
+      for (const fruit of fruits) {
+        allFruits += `<div class="item">${fruit}</div>`
+      }
+      document.querySelector(".view1").innerHTML = allFruits
+    </script>
+
+    <script>
+      const city = [
+        {
+          name: "수도권",
+          title: true,
+        },
+        {
+          name: "서울",
+          lat: 37.56826,
+          lon: 126.977829,
+          minimap: true,
+          anchor: {
+            x: 0,
+            y: 0.5,
+          },
+        },
+        {
+          name: "인천",
+          lat: 37.456241126802716,
+          lon: 126.70594539430273,
+          minimap: true,
+          anchor: {
+            x: 0.325,
+            y: 0.25,
+          },
+        },
+        {
+          name: "수원",
+          lat: 37.269670498876145,
+          lon: 127.02959705990105,
+          minimap: false,
+          anchor: {
+            x: 0,
+            y: -0.325,
+          },
+        },
+        {
+          name: "고양",
+          lat: 37.65838575338392,
+          lon: 126.83199234038817,
+          minimap: false,
+          anchor: {
+            x: 0.75,
+            y: 0.5,
+          },
+        },
+        {
+          name: "하남",
+          lat: 37.54469708166217,
+          lon: 127.216645006403,
+          minimap: false,
+          anchor: {
+            x: -0.5,
+            y: 0.55,
+          },
+        },
+        {
+          name: "경기도",
+          title: true,
+        },
+        {
+          name: "이천",
+          lat: 37.27245902087118,
+          lon: 127.43513032873553,
+          minimap: false,
+          anchor: {
+            x: 0,
+            y: -0.375,
+          },
+        },
+        {
+          name: "광주",
+          lat: 37.429543996472525,
+          lon: 127.25516355572529,
+          minimap: false,
+          anchor: {
+            x: 0,
+            y: -0.04,
+          },
+        },
+        {
+          name: "파주",
+          lat: 37.77451948007521,
+          lon: 126.7816472879626,
+          minimap: false,
+          anchor: {
+            x: -0.5,
+            y: 0.75,
+          },
+        },
+        {
+          name: "평택",
+          lat: 36.99472,
+          lon: 127.08889,
+          minimap: false,
+          anchor: {
+            x: 1.25,
+            y: 0.25,
+          },
+        },
+      ]
+
+      let cityData = ""
+      for (const cityName of city) {
+        console.log(cityName.name)
+        if (!cityName.title) {
+          cityData += `
+                        <div class="card">
+                        <div> 도시이름 - ${cityName.name}</div>
+                        <div> 위치 - lat : ${cityName.lat} / lon : ${cityName.lon} </div>
+                        </div>
+                        `
+        }
+      }
+      document.querySelector(".city").innerHTML = cityData
+
+      const data = {
+        name: "평택",
+        lat: 36.99472,
+        lon: 127.08889,
+        minimap: false,
+      }
+      for (const key in data) {
+        console.log(`${key} : ${data[key]}`)
+      }
+    </script>
+  </body>
+</html>
