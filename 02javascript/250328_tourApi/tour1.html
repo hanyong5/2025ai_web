@@ -13,7 +13,7 @@
     />
     <script
       type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05222ace53571c8fbb636c91def0fbc2"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05222ace53571c8fbb636c91def0fbc2&autoload=true"
     ></script>
     <style>
       .imgView {
@@ -108,7 +108,11 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <!-- 지도보기  -->
+            <div id="map" style="width: 400px; height: 400px"></div>
+            <!-- 지도보기  -->
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
           </div>

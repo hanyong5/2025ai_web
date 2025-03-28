@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05222ace53571c8fbb636c91def0fbc2&autoload=true"
+    ></script>
+
+    <style>
+      .viewImg {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+      .viewImg img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <div class="card">
+            <img src="http://tong.visitkorea.or.kr/cms/resource/36/3079736_image2_1.jpg" alt="" />
+            <div class="card-body">
+              <p>가계해수욕장</p>
+              <div class="btn btn-primary">자세히보기</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container">
+      <div class="row tourList"></div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"><div id="map" style="width: 100%; height: 300px"></div></div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js"
+      integrity="sha512-2A1+/TAny5loNGk3RBbk11FwoKXYOMfAK6R7r4CpQH7Luz4pezqEGcfphoNzB7SM4dixUoJsKkBsB6kg+dNE2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      async function getUser() {
+        const loading = document.getElementById("loading")
+
+        try {
+          const tourRes = await axios.get(
+            "http://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=12&pageNo=1&MobileOS=ETC&MobileApp=AppTest&ServiceKey=fvqYaGbexxakRPZj75oysm6y0Hos5Li3Vq47UgAYNvrYTeOzWmK9%2F5vzNC9OnAgbyG%2BtIWWqRIdTFKxa010hVA%3D%3D&listYN=Y&arrange=A&contentTypeId=12&_type=json"
+          )
+          console.log(tourRes.data)
+
+          const tourDataList = tourRes.data.response.body.items.item
+          console.log(tourDataList)
+
+          let html = ""
+          for (const tourData of tourDataList) {
+            html += `
+                    <div class="col-6 col-md-3">
+                    <div class="card mb-3">
+                        <div class="viewImg"><img src="${
+                          tourData.firstimage != "" ? tourData.firstimage : "noimg.jpg"
+                        }" alt=""  class="w-100" /></div>
+                        <div class="card-body">
+                        <p>${tourData.title}</p>
+                        <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                          data-title="${tourData.title}"
+                          data-lat="${tourData.mapy}"
+                          data-lng="${tourData.mapx}"
+                          >자세히보기</div>
+                        </div>
+                    </div>
+                    </div>
+
+            `
+          }
+
+          document.querySelector(".tourList").innerHTML = html
+        } catch (error) {
+          console.error("데이터x" + error)
+        } finally {
+          loading.style.display = "none"
+        }
+      }
+      getUser()
+
+      exampleModal.addEventListener("shown.bs.modal", function (event) {
+        const button = event.relatedTarget
+        const title = button.getAttribute("data-title")
+        const lat = parseFloat(button.getAttribute("data-lat")) // 위도
+        const lng = parseFloat(button.getAttribute("data-lng")) // 경도
+
+        const modalTitle = exampleModal.querySelector(".modal-title")
+        modalTitle.textContent = title
+
+        const mapContainer = document.getElementById("map")
+        const mapOption = {
+          center: new kakao.maps.LatLng(lat, lng),
+          level: 3,
+        }
+
+        mapContainer.innerHTML = ""
+
+        const map = new kakao.maps.Map(mapContainer, mapOption)
+
+        const markerPosition = new kakao.maps.LatLng(lat, lng)
+        const marker = new kakao.maps.Marker({
+          position: markerPosition,
+          map: map,
+        })
+
+        setTimeout(() => {
+          kakao.maps.event.trigger(map, "resize")
+          map.setCenter(markerPosition) // 리사이즈 후에도 위치 정확히
+        }, 100)
+      })
+    </script>
+  </body>
+</html>

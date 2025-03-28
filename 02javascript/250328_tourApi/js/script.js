@@ -50,7 +50,9 @@ async function getTourData() {
 
 getTourData()
 
-exampleModal.addEventListener("shown.bs.modal", async function (e) {
+const exampleModal = document.getElementById("exampleModal")
+
+exampleModal.addEventListener("shown.bs.modal", function (e) {
   const button = e.relatedTarget
   console.log(button)
   const title = button.getAttribute("data-title")
@@ -58,5 +60,31 @@ exampleModal.addEventListener("shown.bs.modal", async function (e) {
   const lng = parseFloat(button.getAttribute("data-lng"))
 
   const modalTitle = exampleModal.querySelector(".modal-title")
+  // const modalLat = exampleModal.querySelector(".lat")
+  // const modalLng = exampleModal.querySelector(".lng")
+
   modalTitle.innerHTML = title
+  // modalLat.innerHTML = lat
+  // modalLng.innerHTML = lng
+
+  const container = document.getElementById("map")
+  const mapOption = {
+    center: new kakao.maps.LatLng(lat, lng),
+    level: 3,
+  }
+
+  container.innerHTML = ""
+
+  const map = new kakao.maps.Map(container, mapOption)
+
+  const markerPosition = new kakao.maps.LatLng(lat, lng)
+  const marker = new kakao.maps.Maker({
+    position: markerPosition,
+    map: map,
+  })
+
+  setTimeout(() => {
+    kakao.maps.event.trigger(map, "resize")
+    map.setCenter(markerPosition)
+  }, 100)
 })
