@@ -1,6 +1,6 @@
 console.log("script")
 
-function initMap() {
+async function initMap() {
   // var container = document.querySelector("#map")
   var container = document.getElementById("map")
   var mapOption = {
