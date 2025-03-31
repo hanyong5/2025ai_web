@@ -53,7 +53,7 @@ function pagination() {
   pn.innerHTML = ""
 
   const startPage = Math.floor((currentPage - 1) / 10) * 10 + 1 // init 1
-  const endPage = Math.min(startPage + 9, totalPage) // init 10
+  const endPage = startPage + 10 - 1 // init 10
 
   console.log("page : " + startPage, endPage)
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #header {
+        width: 500px;
+        background-color: violet;
+        display: flex;
+        justify-content: center;
+      }
+      #header .pagination {
+        display: flex;
+        gap: 10px;
+      }
+      #header .pagination .pageNum {
+        display: flex;
+        gap: 10px;
+      }
+
+      #header .pagination .pageNum span {
+        width: 40px;
+        height: 40px;
+        background-color: skyblue;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #header .pagination .pageNum span.active {
+        background: blue;
+      }
+
+      #header .pagination .pageNum a {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="pagination">
+        <div class="prev"><</div>
+        <div class="pageNum">
+          <!-- <span class="active"><a href="#">1</a></span>
+          <span><a href="#">2</a></span>
+          <span><a href="#">3</a></span>
+          <span><a href="#">4</a></span>
+          <span><a href="#">4</a></span>
+          <span><a href="#">4</a></span>
+          <span><a href="#">4</a></span>
+          <span><a href="#">4</a></span> -->
+        </div>
+        <div class="next">></div>
+      </div>
+    </div>
+
+    <script>
+      let html = ""
+      for (let i = 1; i <= 10; i++) {
+        // html += `<div>${i}</div>`
+        html += `<span><a href="#">${i}</a></span>`
+      }
+      console.log(html)
+      document.querySelector(".pageNum").innerHTML = html
+
+      // document.querySelector("#header > .pagination .pageNum")
+
+      // document.getElementsByClassName("btn")[0]
+    </script>
+  </body>
+</html>
