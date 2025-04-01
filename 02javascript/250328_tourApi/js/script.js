@@ -185,6 +185,7 @@ function renderTourList(tourList) {
             </div>
             <div class="card-body">
               <h5>${item.title}</h5>
+              <div class="">
               <button class="btn btn-primary" 
                 data-bs-toggle="modal" 
                 data-bs-target="#exampleModal"
@@ -193,7 +194,12 @@ function renderTourList(tourList) {
                 data-lng="${item.mapx}">
                 상세보기
               </button>
+
+              <button class="btn btn-info">추천</button>
+              </div>
+              
             </div>
+
           </div>
         </div>
       `

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.3);
+        /* opacity: 0.3; */
+        width: 100%;
+        height: 100%;
+        /* left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0; */
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal .modalContent {
+        background: #fff;
+        width: 300px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 10px;
+      }
+      .modal .titleWrap {
+        display: flex;
+        justify-content: space-between;
+      }
+      .modal .modalClose {
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="modalBtn">모달열기</button>
+    <div class="modal">
+      <div class="modalContent">
+        <div class="titleWrap">
+          <h3>modal title</h3>
+          <i class="fa-solid fa-xmark modalX"></i>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, atque.</p>
+        <button class="modalClose">닫기</button>
+      </div>
+    </div>
+
+    <script>
+      const modalBtnElm = document.querySelector(".modalBtn")
+      const modalElm = document.querySelector(".modal")
+      const closeElm = document.querySelector(".modalClose")
+      const modalXElm = document.querySelector(".modalX")
+
+      // modalBtnElm.addEventListener("click",function(){})
+      modalBtnElm.addEventListener("click", () => {
+        modalElm.style.display = "flex"
+      })
+
+      closeElm.addEventListener("click", () => {
+        modalElm.style.display = "none"
+      })
+
+      modalXElm.addEventListener("click", () => {
+        modalElm.style.display = "none"
+      })
+    </script>
+  </body>
+</html>
