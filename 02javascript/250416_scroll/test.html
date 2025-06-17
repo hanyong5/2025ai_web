@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        height: 300px;
+        background: lightgray;
+        margin: 20px;
+      }
+      .box.flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .visual{
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        opacity: 0;
+        transition: 0.3s;
+        transform: translateY(20px);
+      }
+
+      .box.view .visual{
+        opacity:1;
+        transform: translateY(0px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">박스1</div>
+    <div class="box">박스2</div>
+    <div class="box flex" id="target">
+      <div class="visual">여기보임</div>
+      <div class="visual">여기보임</div>
+
+    </div>
+    <div class="box">박스4</div>
+
+    <script>
+      const target = document.getElementById("target")
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry,index) => {
+            if (entry.isIntersecting) {
+              console.log("✅ 타겟이 화면에 보입니다!")
+              
+                setTimeout(() => {
+                  target.classList.add("view") // 보일 때 클래스 추가
+              }, index * 300); // 300ms의 지연 시간
+            } else {
+              console.log("❌ 타겟이 화면 밖으로 나갔습니다.")
+              target.classList.remove("view")
+            }
+          })
+        },
+        {
+          root: null, // viewport
+          threshold: 0.7, // 50% 이상 보여야 감지
+          rootMargin: '0px',
+        }
+      )
+
+      observer.observe(target)
+    </script>
+  </body>
+</html>

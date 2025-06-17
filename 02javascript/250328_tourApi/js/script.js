@@ -159,6 +159,8 @@ async function getTourData(page = 1) {
     const tourList = data.response.body.items.item || []
     const totalCount = data.response.body.totalCount
 
+    console.log(data.response.body.items.item)
+
     renderTourList(tourList)
     totalEl.innerHTML = totalCount
 

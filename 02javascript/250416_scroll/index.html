@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list"></ul>
+    <div id="loader">로딩 중...</div>
+
+    <script>
+      const list = document.getElementById("list")
+      const loader = document.getElementById("loader")
+
+      let counter = 1
+
+      function loadItems(count = 10) {
+        for (let i = 0; i < count; i++) {
+          const li = document.createElement("li")
+          li.textContent = `아이템 ${counter++}`
+          list.appendChild(li)
+        }
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0]
+          if (entry.isIntersecting) {
+            loadItems()
+          }
+        },
+        { threshold: 1.0 }
+      )
+
+      observer.observe(loader)
+      loadItems() // 초기 로딩
+    </script>
+  </body>
+</html>
